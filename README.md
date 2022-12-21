@@ -1,5 +1,9 @@
 # Primeiro programa em .NET
 
+## Estrutura geral
+
+![Alt text](abstra%C3%A7%C3%A3o.png)
+
 ## Desafio Inicial
 
 *Seu roberto é um comerciante e precisa de um sistema
@@ -41,6 +45,40 @@ No produto terá os *atributos*
 
     Conteúdo do arquivo:
         {"nome": "Danilo", "telefone": "123432123"}
+
+## DEsafio Complementar 2
+
+Crie uma aplicação console onde terá um cadastro de pessoas no geral
+este cadastro de pessoas vai armazenar pessoas fisicas ou juridicas
+
+JSON com pessoa, fisica ou juridica
+
+Tem que ter uma tela de menu, onde vc escolhe a opção de cadastro, se for pessoa fisica, utilizará o modelo de pessoa fisica, se juridica
+utilizará o modelo de pessoa juridica
+
+porem o serviço para gravar o json, salva no mesmo local, independente se é fisica ou juridica, gravando um json assim
+
+pessoas.json
+[
+  { Id: 1,  Nome: 'Gustavo', Documento: '333.333.333-99', Tipo: 'F'},
+  { Id: 1,  Nome: 'Portes e Transportes LTDA', Documento: '00.000.000/0000-00', Tipo: 'J'}
+]
+
+Voce terá uma classe Usuario com as propriedades
+Id:  Nome, CPF
+
+Voce terá uma classe Fornecedor com as propriedades
+Id:  Nome, CNPJ
+
+Inclusão de dados
+
+Leitura da tabela na tela de um app console
+
+### Referencias
+
+[escreve arquivo](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file)
+[ler arquivo](https://www.educative.io/answers/how-to-read-a-text-file-in-c-sharp)
+[serialize e deserialize json c#](https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/how-to?pivots=dotnet-7-0)
 
 ## Introdução .NET
 
@@ -89,3 +127,11 @@ Construtores
 [Microsoft - Serialização e Desserialização](https://learn.microsoft.com/pt-br/dotnet/standard/serialization/system-text-json/how-to?pivots=dotnet-7-0)
 
 [Linha de Código - Diretórios e Arquivos com DotNet](http://www.linhadecodigo.com.br/artigo/3684/trabalhando-com-arquivos-e-diretorios-em-csharp.aspx)
+
+[Apostila - DEVOPS](https://docs.google.com/presentation/d/1175LVx-Us1CCIaENIglvmZ87-npBDAVOyBRG90VwaaY/edit#slide=id.gf5d14fb323_0_0)
+
+Luan Fonseca
+  - Logica de programação = 10
+  - Inclusão e Listagem de dados Angular = 8
+  - Usando HTTP, POST, PUT, GET, DELTE = 9
+  - Orientação a Objetos = 8

@@ -23,11 +23,11 @@ No produto terá os *atributos*
 
 ## Desafio Complementar
 
-*Faça um programa que*
+- *Faça um programa que*
 
 - [x] leia itens de importação
 
-*para isso você terá que criar um programa para*
+- *para isso você terá que criar um programa para*
 
 - [x] ler arquivos json
 - [x] transformar estes arquivos em objetos
@@ -49,20 +49,23 @@ No produto terá os *atributos*
 ## DEsafio Complementar 2
 
 Crie uma aplicação console onde terá um cadastro de pessoas no geral
-este cadastro de pessoas vai armazenar pessoas fisicas ou juridicas
+este cadastro de pessoas vai armazenar:
 
-JSON com pessoa, fisica ou juridica
+- JSON com pessoa, **fisica** ou **juridica**
 
-Tem que ter uma tela de menu, onde vc escolhe a opção de cadastro, se for pessoa fisica, utilizará o modelo de pessoa fisica, se juridica
-utilizará o modelo de pessoa juridica
+Tem que ter:
+
+- [x] uma tela de menu, onde vc escolhe a opção de cadastro, se for pessoa fisica, utilizará o modelo de pessoa fisica, se juridica
+utilizará o modelo de pessoa juridica.
 
 porem o serviço para gravar o json, salva no mesmo local, independente se é fisica ou juridica, gravando um json assim
 
-pessoas.json
-[
+- **pessoas.json**
+
+``[
   { Id: 1,  Nome: 'Gustavo', Documento: '333.333.333-99', Tipo: 'F'},
   { Id: 1,  Nome: 'Portes e Transportes LTDA', Documento: '00.000.000/0000-00', Tipo: 'J'}
-]
+]``
 
 Voce terá uma classe Usuario com as propriedades
 Id:  Nome, CPF
@@ -90,15 +93,15 @@ Leitura da tabela na tela de um app console
 
 - Exemplo de estrutura básica em **C#**
 
-```c#
-namespace DOTNET {
-    class Program {
-        static void Main(string[] args) {
-            Console.WriteLine("Hello, World! " + args[0]);
+  ```c#
+    namespace DOTNET {
+        class Program {
+            static void Main(string[] args) {
+                Console.WriteLine("Hello, World! " + args[0]);
+            }
         }
     }
-}
-```
+  ```
 
 - Conversão
   - `Convert.ToInt32()`
@@ -111,6 +114,7 @@ namespace DOTNET {
 - `record`
 
 Acessores
+
 - `public`
 - `internal` = a nivel de projeto
 - `private`
@@ -130,8 +134,4 @@ Construtores
 
 [Apostila - DEVOPS](https://docs.google.com/presentation/d/1175LVx-Us1CCIaENIglvmZ87-npBDAVOyBRG90VwaaY/edit#slide=id.gf5d14fb323_0_0)
 
-Luan Fonseca
-  - Logica de programação = 10
-  - Inclusão e Listagem de dados Angular = 8
-  - Usando HTTP, POST, PUT, GET, DELTE = 9
-  - Orientação a Objetos = 8
+[Exercicio DESAFIO III](https://wordpad.cc/codigo-do-futuro)

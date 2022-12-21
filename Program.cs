@@ -7,19 +7,18 @@ internal class Program
     public static string[]? arquivos = Directory.GetFiles(CAMINHO_ARQUIVOS);
     public static List<Produto> listaDeProdutos = new List<Produto>();
     public static List<Cliente> listaDeClientes = new List<Cliente>();
-    // public static List<Usuario> listaDeUsuario = new List<Usuario>();
-    // public static List<Fornecedor> listaDeFornecedor = new List<Fornecedor>();
     public static List<Pessoa> listaDePessoas = new List<Pessoa>();
     private static void Main()
     {
         //listarPessoas("F");
         Console.WriteLine("""
 
-        --------------------------------------------
-        Bem vindo ao Sistema de Cadastro de Produto
-        --------------------------------------------
+        -----------------------------------
+        Bem vindo ao Sistema de Cadastro
+        -----------------------------------
 
         """);
+
         var opcao = 0;
         atualizaListaLocal();
         
@@ -111,7 +110,6 @@ internal class Program
                 Console.WriteLine(pessoa);
             }
         }
-        
     }
 
     private static void listarClientes()
@@ -124,10 +122,6 @@ internal class Program
 
     private static void atualizaArquivosLocais() {
         Program.arquivos = Directory.GetFiles(CAMINHO_ARQUIVOS);
-        foreach (var arq in arquivos)
-        {
-            Console.WriteLine(arq);
-        }
     }
 
     private static void atualizaListaLocal(){
@@ -136,7 +130,6 @@ internal class Program
             string jsonString = File.ReadAllText(arq);
             Cliente cliente = JsonSerializer.Deserialize<Cliente>(jsonString)!;
             bool contains = Program.listaDeClientes.Contains(cliente);
-            Console.WriteLine("Contains: " + contains.ToString());
             if(contains == false)
             {
                 Program.listaDeClientes.Add(cliente);
@@ -150,15 +143,13 @@ internal class Program
         string? nomeDoCliente = Console.ReadLine();
         Console.WriteLine("\nInforme o telefone do cliente:\n");
         string? telefone = Console.ReadLine();
-        Cliente cliente = new Cliente(nomeDoCliente!,telefone!);
+        Cliente cliente = new Cliente() {Nome = nomeDoCliente, Telefone = telefone};
         string fileName = "client"+ (cliente.Id).ToString() + ".json";
         string directoryName = "C:\\Users\\Luan Fonseca\\Desktop\\Codigo do Futuro\\DOTNET\\Imports\\" + fileName;
-        Console.WriteLine(directoryName);
-
         
         string jsonString = JsonSerializer.Serialize(cliente);
-        Console.WriteLine(cliente.ToString());
         File.WriteAllText(directoryName, jsonString);
+        Console.WriteLine("Cliente Cadastrado com sucesso!");
         atualizaArquivosLocais();
         atualizaListaLocal();
     }
@@ -212,78 +203,5 @@ internal class Program
         
         Console.WriteLine("\nQuantidade Atual de Produtos no estoque: " + soma + "\n");
         
-    }
-}
-
-public class Produto
-{
-   private int Id;
-   public string? Nome;
-   public int? Quantidade;
-
-    public Produto(string? nome, int? quantidade)
-    {
-     this.Nome = nome; 
-     this.Quantidade = quantidade;
-     this.Id = Program.listaDeProdutos.Count+1; 
-    }
-
-    public override string? ToString()
-    {
-        return "id: " + this.Id + "\nnome: " +  this.Nome + "\nquantidade: " + this.Quantidade ;
-    }
-}
-
-public class Cliente {
-
-    public int Id {get;}
-    public string? Nome {get;set;}
-    public string? Telefone {get;set;}
-
-    public Cliente(string nome, string telefone)
-    {
-        this.Nome = nome;
-        this.Telefone = telefone;
-        this.Id = Program.listaDeClientes.Count+1;
-    }
-
-     public override string? ToString()
-    {
-        return "\nnome: " +  this.Nome + "\ntelefone: " + this.Telefone ;
-    }
-}
-
-public class Usuario: Pessoa {
-    public Usuario(string nome, string documento) {
-        this.Nome = nome;
-        this.Documento = documento;
-        this.Id = Program.listaDePessoas.Count() +1;
-        this.Tipo = "F";
-    }
-
-      public override string? ToString()
-    {
-        return "\nId:" + this.Id + "\nnome: " +  this.Nome + "\nDocumento: " + this.Documento + "\nTipo:" + this.Tipo;
-    }
-}
-
-public class Fornecedor : Pessoa{
-    public Fornecedor(string nome, string documento) {
-        this.Nome = nome;
-        this.Documento = documento;
-        this.Id = Program.listaDePessoas.Count() +1;
-        this.Tipo = "J";
-    }
-}
-
-public class Pessoa {
-    public int Id {get;set;}
-    public string Nome {get;set;} = default!;
-    public string Documento {get;set;} = default!;
-    public string? Tipo {get;set;}
-
-     public override string? ToString()
-    {
-        return "\nId:" + this.Id + "\nnome: " +  this.Nome + "\nDocumento: " + this.Documento + "\nTipo:" + this.Tipo;
     }
 }
